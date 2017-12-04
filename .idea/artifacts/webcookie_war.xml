@@ -1,0 +1,8 @@
+<component name="ArtifactManager">
+  <artifact type="war" name="webcookie:war">
+    <output-path>$PROJECT_DIR$/webcookie/target</output-path>
+    <root id="archive" name="web.cookie.war">
+      <element id="artifact" artifact-name="webcookie:war exploded" />
+    </root>
+  </artifact>
+</component>
