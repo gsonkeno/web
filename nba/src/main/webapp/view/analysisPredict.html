@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>分析预测</title>
+    <link rel="stylesheet" type="text/css" href="/nba/webjars/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/nba/css/base.css">
+    <link rel="stylesheet" type="text/css" href="/nba/css/index.css">
+    <style>
+        .div-left{ float:left;width:49%;border:1px solid #F00}
+        .div-right{ float:right;width:49%;border:1px solid #000}
+    </style>
+</head>
+<body>
+<div id="header">
+    <div class="page-container" id="nav">
+        <ul class="nav-item">
+            <li><a href="/nba/index.html" target="view-iframe">赛果分析</a></li>
+            <li><a href="/nba/view/gameEntry.html" target="view-iframe">赛果录入</a></li>
+            <li><a href="/nba/view/teamAnalyze.html" target="view-iframe">球队分析</a></li>
+            <li><a href="/nba/view/learn/learn.html" target="view-iframe">学习</a></li>
+            <li><a href="/nba/view/analysisPredict.html" target="view-iframe">分析预测</a></li>
+        </ul>
+    </div>
+</div>
+
+<div class="content">
+    <div class="div-left">
+        <div class="form-inline" role="form">
+            <div class="form-group">
+                <label class="form-lable">球队</label>
+                <input type="text" id="teamNameL" class="form-control">
+                <span>最近</span>
+                <select id="gameCountsL">
+                <option value="10">10</option>
+                <option value="15">15</option>
+                <option value="20">20</option>
+                <option value="25">25</option>
+                <option value="30">30</option>
+                <option value="35">35</option>
+                <option value="40">40</option>
+                <option value="45">45</option>
+                <option value="50">50</option>
+                <option value="55">55</option>
+                <option value="60">60</option>
+                <option value="65">65</option>
+                <option value="70">70</option>
+                <option value="75">75</option>
+                <option value="80">80</option>
+                </select>
+                <span>场比赛结果</span>
+            </div>
+        </div>
+
+        <table class="table">
+            <thead >
+            <th>比赛日期</th>
+            <th >主场</th>
+            <th >客场</th>
+            <th >总分</th>
+            <th >第一节</th>
+            <th >第二节</th>
+            <th >第三节</th>
+            <th >第四节</th>
+            <th >加时</th>
+
+            </thead>
+            <tbody id="latestGameResultL">
+
+            </tbody>
+        </table>
+
+        <div id="latestGameEchartL" style="height:400px;"></div>
+
+    </div>
+    <div class="div-right">
+        <div class="form-inline" role="form">
+            <div class="form-group">
+                <label class="form-lable">球队</label>
+                <input type="text" id="teamNameR" class="form-control">
+                <span>最近</span>
+                <select id="gameCountsR">
+                    <option value="10">10</option>
+                    <option value="15">15</option>
+                    <option value="20">20</option>
+                    <option value="25">25</option>
+                    <option value="30">30</option>
+                </select>
+                <span>场比赛结果</span>
+            </div>
+        </div>
+
+        <table class="table">
+            <thead >
+            <th>比赛日期</th>
+            <th >主场</th>
+            <th >客场</th>
+            <th >总分</th>
+            <th >第一节</th>
+            <th >第二节</th>
+            <th >第三节</th>
+            <th >第四节</th>
+            <th >加时</th>
+
+            </thead>
+            <tbody id="latestGameResultR">
+
+            </tbody>
+        </table>
+
+    </div>
+</div>
+
+<!--<div class="content">-->
+    <!--<div class="form-inline" role="form">-->
+        <!--<div class="form-group">-->
+            <!--<label class="form-lable">球队</label>-->
+            <!--<input type="text" id="teamName" class="form-control">-->
+            <!--<span>最近</span>-->
+            <!--<select id="gameCounts">-->
+                <!--<option value="10">10</option>-->
+                <!--<option value="15">15</option>-->
+                <!--<option value="20">20</option>-->
+                <!--<option value="25">25</option>-->
+                <!--<option value="30">30</option>-->
+            <!--</select>-->
+            <!--<span>场比赛结果</span>-->
+        <!--</div>-->
+    <!--</div>-->
+<!--</div>-->
+
+<script id="gameResult_tmpl" type="text/x-jquery-tmpl">
+			<tr>
+				<td >${game_date}</td>
+				<td>${host}</td>
+				<td>${guest}</td>
+				<td>${host_score}-${guest_score}</td>
+				<td>${host_quarter1}-${guest_quarter1}</td>
+				<td>${host_quarter2}-${guest_quarter2}</td>
+				<td>${host_quarter3}-${guest_quarter3}</td>
+				<td>${host_quarter4}-${guest_quarter4}</td>
+				<td>${host_ot}-${guest_ot}</td>
+			</tr>
+</script>
+<script type="text/javascript" src="/nba/webjars/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="/nba/webjars/echarts/3.2.2/dist/echarts.min.js"></script>
+<script type="text/javascript" src="/nba/js/jquery.tmpl.min.js"></script>
+<script type="text/javascript" src="/nba/js/analysisPredict.js"></script>
+</body>
+</html>

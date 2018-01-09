@@ -1,0 +1,105 @@
+<!DOCTYPE html>
+<html>
+<head>
+<meta charset="UTF-8">
+<title>篮球首页</title>
+	<link rel="stylesheet" type="text/css" href="webjars/bootstrap/3.3.7/css/bootstrap.min.css">
+	<link rel="stylesheet" type="text/css" href="css/base.css">
+	<link rel="stylesheet" type="text/css" href="css/index.css">
+</head>
+<body>
+<div id="header">
+	<div class="page-container" id="nav">
+		<ul class="nav-item">
+			<li><a href="/nba/index.html" target="view-iframe">赛果分析</a></li>
+			<li><a href="/nba/view/gameEntry.html" target="view-iframe">赛果录入</a></li>
+			<li><a href="/nba/view/teamAnalyze.html" target="view-iframe">球队分析</a></li>
+			<li><a href="/nba/view/learn/learn.html" target="view-iframe">学习</a></li>
+			<li><a href="/nba/view/analysisPredict.html" target="view-iframe">分析预测</a></li>
+		</ul>
+	</div>
+</div>
+<div class="content">
+	<div class="form-inline" role="form">
+		<div class="form-group">
+			<label class="form-lable">搜索日期：</label>
+			<input type="text" id="gameDateBegin" class="form-control time-input" onclick="WdatePicker()">
+			<img onclick="WdatePicker({el:'gameDateBegin'})" src="/nba/js/My97DatePicker/skin/datePicker.gif" width="16" height="22" align="absmiddle">
+			<span>至</span>
+			<input type="text" id="gameDateEnd" class="form-control time-input" onclick="WdatePicker()">
+			<img onclick="WdatePicker({el:'gameDateEnd'})" src="/nba/js/My97DatePicker/skin/datePicker.gif" width="16" height="22" align="absmiddle">
+
+			<label class="form-lable">球队</label>
+			<input type="text" id="teamName" class="form-control">
+
+			<label>主客</label>
+			<select id="hostGuestFlag">
+				<option value="0">全部</option>
+				<option value="1">主场</option>
+				<option value="2">客场</option>
+			</select>
+
+			<label>每页条数</label>
+			<select id="pageSize">
+				<option value="10">10</option>
+				<option value="15">15</option>
+				<option value="20">20</option>
+				<option value="25">25</option>
+				<option value="30">30</option>
+			</select>
+
+		</div>
+		<div class="text-right">
+            <button type="button" class="btn btn-default" aria-label="Left Align" id="prevBtn">
+                <span class="glyphicon glyphicon-chevron-left" aria-hidden="true"></span>
+            </button>
+            <span> <span id="current_page">1</span>/<span id="total_page">1</span>(<span id="total_size">0</span>条) </span>
+            <button type="button" class="btn btn-default" aria-label="Left Align" id="nextBtn">
+                <span class="glyphicon glyphicon-chevron-right" aria-hidden="true" ></span>
+            </button>
+
+		</div>
+	</div>
+	<table class="table">
+		<thead >
+		<th>比赛日期</th>
+		<th >主场</th>
+		<th >客场</th>
+		<th >总分</th>
+		<th >第一节</th>
+		<th >第二节</th>
+		<th >第三节</th>
+		<th >第四节</th>
+		<th >加时一</th>
+		<th >加时二</th>
+		<th >加时三</th>
+
+		</thead>
+		<tbody id="gameResult">
+		</tbody>
+		<script id="gameResult_tmpl" type="text/x-jquery-tmpl">
+			<tr>
+				<td >${game_date}</td>
+				<td>${host}</td>
+				<td>${guest}</td>
+				<td>${host_score}-${guest_score}</td>
+				<td>${host_quarter1}-${guest_quarter1}</td>
+				<td>${host_quarter2}-${guest_quarter2}</td>
+				<td>${host_quarter3}-${guest_quarter3}</td>
+				<td>${host_quarter4}-${guest_quarter4}</td>
+				<td>${host_quarter5}-${guest_quarter5}</td>
+				<td>${host_quarter6}-${guest_quarter6}</td>
+				<td>${host_quarter7}-${guest_quarter7}</td>
+				<td></td>
+			</tr>
+		</script>
+	</table>
+</div>
+<script type="text/javascript" src="webjars/jquery/3.2.1/jquery.min.js"></script>
+<script type="text/javascript" src="/nba/js/index.js"></script>
+<script type="text/javascript" src="/nba/js/My97DatePicker/WdatePicker.js"></script>
+<script type="text/javascript" src="/nba/js/jquery.tmpl.min.js"></script>
+<script type="text/javascript" src="/nba/js/util/DateUtil.js"></script>
+<script type="text/javascript" src="/nba/js/gameAnalyze.js"></script>
+</body>
+</html>

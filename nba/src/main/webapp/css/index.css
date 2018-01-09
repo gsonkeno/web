@@ -1,0 +1,67 @@
+@CHARSET "UTF-8";
+#header{
+	background: #000000;
+	width:100%;
+	height: 70px;
+	position: fixed;
+	z-index: 1000;
+}
+#nav{
+	width: auto;
+    padding-right: 20px;
+    height: 60px;
+    margin: 0 auto;
+
+    
+}
+ul.nav-item{
+	list-style: none;
+}
+.nav-item li{
+	float:left;
+	text-align: -webkit-match-parent;
+}
+/*导航里的链接*/
+.nav-item a{
+   position: relative;
+    padding: 0 25px;
+    display: block;
+    color: #ffffff;
+    text-align: center;
+    font-size: 14px;
+    height: 60px;
+    line-height: 60px;
+    -webkit-transition: background-color 0.3s;
+    -moz-transition: background-color 0.3s;
+    transition: background-color 0.3s;
+}
+li{
+	display: list-item;
+}
+.nav-item a:hover,a:active{
+	color:red;
+	background-color: #14191E;
+}
+.nav-item a.active{
+	background-color: #14191E;
+}
+body .bk {
+    width: 100%;
+    height: 490px;
+    position: absolute;
+    top: 0px;
+    background-image: url(/bs/img/bk.jpg);
+    background-size: cover;
+    z-index: -1;
+}
+div.content{
+	position:absolute;
+	top:75px;
+	width: 100%;
+	height:auto;
+}
+iframe{
+	border:0px;
+	width: 100%;
+	height:100%;
+}
