@@ -50,7 +50,7 @@ body .bk {
     height: 490px;
     position: absolute;
     top: 0px;
-    background-image: url(/bs/img/bk.jpg);
+    background-image: url(/nba/img/bk.jpg);
     background-size: cover;
     z-index: -1;
 }
