@@ -4,4 +4,14 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
+
+  <servlet>
+    <servlet-name>session</servlet-name>
+    <servlet-class>com.gsonkeno.webcookie.CookieSessionServlet</servlet-class>
+  </servlet>
+
+  <servlet-mapping>
+    <servlet-name>session</servlet-name>
+    <url-pattern>/session</url-pattern>
+  </servlet-mapping>
 </web-app>
